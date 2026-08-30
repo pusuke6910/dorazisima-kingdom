@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ドラ獅子魔王国 | 公式ウェブサイト</title>
+  <meta name="description" content="ドラ獅子魔王国 公式ウェブサイト">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Playfair+Display:wght@700;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Noto Sans JP", sans-serif;
+      background: #070707;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(150, 0, 0, .20),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 10% 80%,
+          rgba(90, 0, 0, .13),
+          transparent 35%
+        ),
+        #070707;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .035;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.5) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.5) 1px,
+          transparent 1px
+        );
+
+      background-size: 50px 50px;
+    }
+
+
+    /* ========================================
+       HEADER
+    ======================================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 6%;
+
+      z-index: 1000;
+
+      background: rgba(7, 7, 7, .72);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      text-decoration: none;
+      color: white;
+
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+
+      border-radius: 12px;
+
+      display: grid;
+      place-items: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #9b0000,
+          #3b0000
+        );
+
+      box-shadow:
+        0 0 25px rgba(180, 0, 0, .3);
+
+      font-size: 20px;
+    }
+
+    .logo-text span {
+      display: block;
+      font-size: 14px;
+    }
+
+    .logo-text small {
+      display: block;
+      margin-top: -2px;
+
+      color: #888;
+      font-size: 8px;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    nav a {
+      position: relative;
+
+      color: #aaa;
+      text-decoration: none;
+
+      font-size: 13px;
+      font-weight: 500;
+
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    nav a::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+
+      width: 0;
+      height: 1px;
+
+      background: #d40000;
+
+      transition: .3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .emergency-link {
+      color: #ff4545 !important;
+    }
+
+    .emergency-link::after {
+      background: #ff0000 !important;
+    }
+
+    .discord-btn {
+      padding: 11px 20px;
+
+      border-radius: 9px;
+
+      background: #fff;
+      color: #111 !important;
+
+      font-weight: 700 !important;
+
+      transition: .3s !important;
+    }
+
+    .discord-btn:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 8px 30px rgba(255,255,255,.15);
+    }
+
+    .discord-btn::after {
+      display: none;
+    }
+
+
+    /* ========================================
+       HERO
+    ======================================== */
+
+    .hero {
+      min-height: 100vh;
+
+      padding: 160px 7% 100px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 1000px;
+
+      animation:
+        heroIn 1.2s ease forwards;
+    }
+
+    @keyframes heroIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .country-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 8px 15px;
+      margin-bottom: 25px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      border-radius: 100px;
+
+      color: #aaa;
+
+      font-size: 11px;
+      letter-spacing: 4px;
+
+      background:
+        rgba(255,255,255,.03);
+    }
+
+    .country-label::before,
+    .country-label::after {
+      content: "";
+
+      width: 20px;
+      height: 1px;
+
+      background: #8d0000;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+
+      font-size:
+        clamp(58px, 10vw, 145px);
+
+      line-height: .9;
+
+      letter-spacing: -5px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #fff 0%,
+          #fff 45%,
+          #aaa 100%
+        );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      text-shadow:
+        0 0 70px
+        rgba(255,255,255,.08);
+    }
+
+    .hero-jp {
+      margin-top: 28px;
+
+      font-size:
+        clamp(20px, 3vw, 34px);
+
+      font-weight: 900;
+
+      letter-spacing: 10px;
+    }
+
+    .hero-description {
+      max-width: 650px;
+
+      margin:
+        28px auto 40px;
+
+      color: #8e8e8e;
+
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .hero-buttons {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 14px;
+
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-width: 180px;
+
+      padding: 15px 24px;
+
+      border-radius: 10px;
+
+      text-decoration: none;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      transition: .3s;
+    }
+
+    .btn-primary {
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #b30000,
+          #610000
+        );
+
+      box-shadow:
+        0 10px 40px
+        rgba(150,0,0,.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 15px 45px
+        rgba(180,0,0,.35);
+    }
+
+    .btn-secondary {
+      color: #ddd;
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      background:
+        rgba(255,255,255,.04);
+    }
+
+    .btn-secondary:hover {
+      border-color:
+        rgba(255,255,255,.3);
+
+      background:
+        rgba(255,255,255,.08);
+    }
+
+    .scroll {
+      position: absolute;
+
+      bottom: 35px;
+      left: 50%;
+
+      transform:
+        translateX(-50%);
+
+      color: #555;
+
+      font-size: 9px;
+      letter-spacing: 4px;
+    }
+
+    .scroll::after {
+      content: "";
+
+      display: block;
+
+      width: 1px;
+      height: 35px;
+
+      margin: 10px auto 0;
+
+      background:
+        linear-gradient(
+          #555,
+          transparent
+        );
+    }
+
+
+    /* ========================================
+       SECTION
+    ======================================== */
+
+    section {
+      padding: 120px 7%;
+
+      max-width: 1400px;
+
+      margin: auto;
+    }
+
+    .section-label {
+      color: #8d0000;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: 4px;
+
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size:
+        clamp(34px, 5vw, 62px);
+
+      line-height: 1.1;
+
+      margin-bottom: 25px;
+
+      font-weight: 900;
+    }
+
+    .section-description {
+      color: #888;
+
+      line-height: 2;
+
+      max-width: 650px;
+    }
+
+
+    /* ========================================
+       CREST
+    ======================================== */
+
+    .crest-section {
+      text-align: center;
+
+      max-width: 100%;
+
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .crest {
+      width: 180px;
+      height: 180px;
+
+      margin:
+        0 auto 35px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.15);
+
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(150,0,0,.3),
+          transparent 65%
+        ),
+        #0c0c0c;
+
+      box-shadow:
+        0 0 70px
+        rgba(130,0,0,.16),
+
+        inset 0 0 50px
+        rgba(255,255,255,.02);
+    }
+
+    .crest span {
+      font-size: 70px;
+
+      filter:
+        grayscale(1);
+    }
+
+
+    /* ========================================
+       ABOUT
+    ======================================== */
+
+    .about-grid {
+      margin-top: 65px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 18px;
+    }
+
+    .about-card {
+      padding: 40px;
+
+      min-height: 220px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.08);
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.055),
+          rgba(255,255,255,.015)
+        );
+
+      transition: .35s;
+    }
+
+    .about-card:hover {
+      transform:
+        translateY(-5px);
+
+      border-color:
+        rgba(180,0,0,.35);
+    }
+
+    .about-card .number {
+      color: #666;
+
+      font-size: 11px;
+
+      letter-spacing: 2px;
+    }
+
+    .about-card h3 {
+      margin:
+        25px 0 12px;
+
+      font-size: 22px;
+    }
+
+    .about-card p {
+      color: #777;
+
+      font-size: 13px;
+
+      line-height: 1.9;
+    }
+
+
+    /* ========================================
+       NEWS
+    ======================================== */
+
+    .news {
+      margin-top: 55px;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.08);
+    }
+
+    .news-item {
+      display: grid;
+
+      grid-template-columns:
+        130px 1fr 30px;
+
+      align-items: center;
+
+      gap: 25px;
+
+      padding: 25px 5px;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+      transition: .3s;
+    }
+
+    .news-item:hover {
+      padding-left: 12px;
+
+      background:
+        rgba(255,255,255,.015);
+    }
+
+    .news-date {
+      color: #666;
+
+      font-size: 11px;
+
+      letter-spacing: 1px;
+    }
+
+    .news-content {
+      color: #ccc;
+
+      font-size: 14px;
+    }
+
+    .news-arrow {
+      color: #666;
+    }
+
+
+    /* ========================================
+       CTA
+    ======================================== */
+
+    .cta {
+      max-width: 1200px;
+
+      margin:
+        80px auto 120px;
+
+      padding: 80px 30px;
+
+      text-align: center;
+
+      border-radius: 25px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.09);
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(150,0,0,.18),
+          transparent 55%
+        ),
+        rgba(255,255,255,.025);
+    }
+
+    .cta h2 {
+      font-size:
+        clamp(35px, 5vw, 65px);
+
+      margin-bottom: 18px;
+
+      font-weight: 900;
+    }
+
+    .cta p {
+      color: #777;
+
+      margin-bottom: 35px;
+
+      font-size: 13px;
+    }
+
+
+    /* ========================================
+       EMERGENCY MODAL
+    ======================================== */
+
+    .emergency-modal {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 9999;
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 25px;
+
+      background:
+        rgba(0,0,0,.88);
+
+      backdrop-filter:
+        blur(15px);
+
+      -webkit-backdrop-filter:
+        blur(15px);
+
+      opacity: 0;
+
+      transition:
+        opacity .3s ease;
+    }
+
+    .emergency-modal.active {
+      display: flex;
+
+      opacity: 1;
+    }
+
+    .emergency-box {
+      position: relative;
+
+      width:
+        min(850px, 100%);
+
+      max-height: 85vh;
+
+      overflow-y: auto;
+
+      padding: 55px;
+
+      border:
+        1px solid
+        rgba(180,0,0,.45);
+
+      border-radius: 20px;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(150,0,0,.18),
+          transparent 40%
+        ),
+        #0b0b0b;
+
+      box-shadow:
+        0 0 100px
+        rgba(130,0,0,.2),
+
+        0 30px 100px
+        rgba(0,0,0,.7);
+
+      transform:
+        translateY(20px);
+
+      transition:
+        transform .35s ease;
+    }
+
+    .emergency-modal.active
+    .emergency-box {
+      transform:
+        translateY(0);
+    }
+
+    .close-btn {
+      position: absolute;
+
+      top: 18px;
+      right: 22px;
+
+      width: 40px;
+      height: 40px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.1);
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,.04);
+
+      color: #aaa;
+
+      font-size: 25px;
+
+      cursor: pointer;
+
+      transition: .3s;
+    }
+
+    .close-btn:hover {
+      color: white;
+
+      background: #800000;
+    }
+
+    .emergency-label {
+      color: #e00000;
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 4px;
+
+      margin-bottom: 18px;
+    }
+
+    .emergency-box h2 {
+      font-size:
+        clamp(27px, 4vw, 46px);
+
+      line-height: 1.3;
+
+      font-weight: 900;
+    }
+
+    .emergency-line {
+      width: 100%;
+      height: 1px;
+
+      margin: 30px 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          #9b0000,
+          transparent
+        );
+    }
+
+    .emergency-text {
+      color: #999;
+
+      font-size: 14px;
+
+      line-height: 2.1;
+    }
+
+    .emergency-text p {
+      margin-bottom: 25px;
+    }
+
+    .emergency-text strong {
+      color: #ddd;
+    }
+
+    .big-text {
+      color: white !important;
+
+      font-size: 21px;
+
+      font-weight: 900;
+
+      text-align: center;
+
+      margin:
+        40px 0 !important;
+    }
+
+    .sunday {
+      color: #ddd;
+
+      text-align: center;
+
+      font-size: 18px;
+    }
+
+    .sunday strong {
+      color: #e00000;
+
+      font-size: 35px;
+    }
+
+    .quote {
+      margin-top: 45px;
+
+      padding: 30px;
+
+      border-left:
+        2px solid
+        #9b0000;
+
+      background:
+        rgba(255,255,255,.025);
+
+      color: #ddd;
+
+      font-size: 16px;
+
+      line-height: 2;
+
+      font-weight: 700;
+    }
+
+    .fiction {
+      margin-top: 50px !important;
+
+      padding-top: 20px;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+      color: #555 !important;
+
+      font-size: 10px !important;
+
+      line-height: 1.7 !important;
+    }
+
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    footer {
+      padding: 50px 7%;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      color: #555;
+
+      font-size: 11px;
+    }
+
+    footer strong {
+      color: #aaa;
+    }
+
+    .footer-fiction {
+      margin-top: 10px;
+
+      color: #444;
+
+      font-size: 9px;
+    }
+
+
+    /* ========================================
+       ANIMATION
+    ======================================== */
+
+    .fade {
+      opacity: 0;
+
+      transform:
+        translateY(25px);
+
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+
+    /* ========================================
+       RESPONSIVE
+    ======================================== */
+
+    @media (max-width: 750px) {
+
+      header {
+        padding: 0 20px;
+      }
+
+      nav {
+        gap: 10px;
+      }
+
+      nav a:not(.discord-btn) {
+        display: none;
+      }
+
+      .hero {
+        padding:
+          140px 20px 100px;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .hero-jp {
+        letter-spacing: 5px;
+      }
+
+      section {
+        padding: 80px 20px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .news-item {
+        grid-template-columns:
+          90px 1fr;
+      }
+
+      .news-arrow {
+        display: none;
+      }
+
+      .emergency-box {
+        padding: 40px 25px;
+      }
+
+      .emergency-text {
+        font-size: 13px;
+      }
+
+      .big-text {
+        font-size: 18px;
+      }
+
+      footer {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+
+  <header>
+
+    <a href="#" class="logo">
+
+      <div class="logo-icon">
+        🐉
+      </div>
+
+      <div class="logo-text">
+
+        <span>
+          ドラ獅子魔王国
+        </span>
+
+        <small>
+          DRASHISHI MAOUKOKU
+        </small>
+
+      </div>
+
+    </a>
+
+
+    <nav>
+
+      <a href="#about">
+        国家概要
+      </a>
+
+      <a href="#news">
+        最新情報
+      </a>
+
+      <a
+        href="#"
+        onclick="openEmergency(); return false;"
+        class="emergency-link"
+      >
+        ⚠ 緊急イベント
+      </a>
+
+      <a href="#contact">
+        お問い合わせ
+      </a>
+
+      <a
+        href="https://discord.gg/x4mDa5dw3n"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="discord-btn"
+      >
+        Discord ↗
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- ========================================
+       MAIN
+  ======================================== -->
+
+  <main>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="country-label">
+          OFFICIAL WEBSITE
+        </div>
+
+        <h1>
+          DRASHISHI
+        </h1>
+
+        <div class="hero-jp">
+          ドラ獅子魔王国
+        </div>
+
+        <p class="hero-description">
+          誇りを掲げ、未来を創る。<br>
+          ここに、ドラ獅子魔王国の公式ウェブサイト。
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            href="#about"
+            class="btn btn-primary"
+          >
+            国家について
+          </a>
+
+          <a
+            href="https://discord.gg/x4mDa5dw3n"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            Discord に参加 ↗
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="scroll">
+        SCROLL
+      </div>
+
+    </section>
+
+
+
+    <!-- CREST -->
+
+    <section class="crest-section fade">
+
+      <div class="crest">
+        <span>🐉</span>
+      </div>
+
+      <div class="section-label">
+        THE KINGDOM
+      </div>
+
+      <h2 class="section-title">
+        ドラ獅子魔王国
+      </h2>
+
+      <p
+        class="section-description"
+        style="margin: auto;"
+      >
+        強さ、自由、そして仲間との繋がり。<br>
+        私たちはこの理念を胸に、
+        ひとつの国を築いていきます。
+      </p>
+
+    </section>
+
+
+
+    <!-- ABOUT -->
+
+    <section
+      id="about"
+      class="fade"
+    >
+
+      <div class="section-label">
+        ABOUT THE KINGDOM
+      </div>
+
+      <h2 class="section-title">
+        国家概要
+      </h2>
+
+      <p class="section-description">
+        ドラ獅子魔王国は、仲間たちと共に
+        発展していくことを目指す国家です。
+        Minecraftを中心としたコミュニティを通じ、
+        新しい歴史を築いています。
+      </p>
+
+
+      <div class="about-grid">
+
+
+        <div class="about-card">
+
+          <div class="number">
+            01 / IDENTITY
+          </div>
+
+          <h3>
+            国家の理念
+          </h3>
+
+          <p>
+            仲間を尊重し、自由な発想を大切にする。
+            一人ひとりがこの国の歴史を作る存在です。
+          </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+          <div class="number">
+            02 / COMMUNITY
+          </div>
+
+          <h3>
+            コミュニティ
+          </h3>
+
+          <p>
+            Discordを中心に、国民同士が交流できる
+            活発なコミュニティを形成しています。
+          </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+          <div class="number">
+            03 / WORLD
+          </div>
+
+          <h3>
+            世界
+          </h3>
+
+          <p>
+            Minecraftの世界を舞台に、
+            建築、冒険、国家間の交流など
+            様々な活動を行います。
+          </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+          <div class="number">
+            04 / FUTURE
+          </div>
+
+          <h3>
+            未来
+          </h3>
+
+          <p>
+            今日よりも面白い明日へ。
+            新たな歴史と物語を、
+            国民と共に作り上げていきます。
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- NEWS -->
+
+    <section
+      id="news"
+      class="fade"
+    >
+
+      <div class="section-label">
+        LATEST NEWS
+      </div>
+
+      <h2 class="section-title">
+        最新情報
+      </h2>
+
+
+      <div class="news">
+
+
+        <div class="news-item">
+
+          <div class="news-date">
+            2026.08.30
+          </div>
+
+          <div class="news-content">
+            ドラ獅子魔王国
+            公式ウェブサイトを公開しました。
+          </div>
+
+          <div class="news-arrow">
+            →
+          </div>
+
+        </div>
+
+
+        <div class="news-item">
+
+          <div class="news-date">
+            2026.08.30
+          </div>
+
+          <div class="news-content">
+            公式Discordコミュニティへの
+            参加受付中。
+          </div>
+
+          <div class="news-arrow">
+            →
+          </div>
+
+        </div>
+
+
+        <div class="news-item">
+
+          <div class="news-date">
+            IMPORTANT
+          </div>
+
+          <div class="news-content">
+            緊急イベントに関する国家声明を公開しました。
+          </div>
+
+          <div class="news-arrow">
+            →
+          </div>
+
+        </div>
+
+
+        <div class="news-item">
+
+          <div class="news-date">
+            COMING SOON
+          </div>
+
+          <div class="news-content">
+            新たな国家情報を近日公開予定。
+          </div>
+
+          <div class="news-arrow">
+            →
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CTA -->
+
+    <section
+      id="contact"
+      class="cta fade"
+    >
+
+      <div class="section-label">
+        JOIN US
+      </div>
+
+      <h2>
+        共に、歴史を。
+      </h2>
+
+      <p>
+        ドラ獅子魔王国のコミュニティに参加しよう。
+      </p>
+
+      <a
+        href="https://discord.gg/x4mDa5dw3n"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Discord に参加する ↗
+      </a>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ========================================
+       EMERGENCY MODAL
+  ======================================== -->
+
+  <div
+    id="emergencyModal"
+    class="emergency-modal"
+  >
+
+    <div class="emergency-box">
+
+
+      <button
+        class="close-btn"
+        onclick="closeEmergency()"
+        aria-label="閉じる"
+      >
+        ×
+      </button>
+
+
+      <div class="emergency-label">
+        ⚠ EMERGENCY EVENT
+      </div>
+
+
+      <h2>
+        【全世界へ告ぐ】<br>
+        ドラ獅子魔王国より最終通告
+      </h2>
+
+
+      <div class="emergency-line"></div>
+
+
+      <div class="emergency-text">
+
+
+        <p>
+          <strong>
+            DRASHISHI MAOUKOKU — OFFICIAL PROCLAMATION
+          </strong>
+        </p>
+
+
+        <p>
+          有象無象の国々よ、刮目せよ。
+        </p>
+
+
+        <p>
+          本日、ドラ獅子魔王国は全世界に向け、
+          ここに正式な国家声明を発する。
+        </p>
+
+
+        <p>
+          これまで各国が築き上げてきた秩序、
+          歴史、そして小さな誇り。
+        </p>
+
+
+        <p>
+          そのすべてが、今、
+          大きな転換点を迎える。
+        </p>
+
+
+        <p>
+          これは単なる争いではない。
+        </p>
+
+
+        <p>
+          我々が目指すのは、
+          既存の世界を超えた
+          <strong>新たなる秩序の構築</strong>
+          である。
+        </p>
+
+
+        <p>
+          同盟を結ぶか。<br>
+          我々に抗うか。<br>
+          あるいは、静かに時代の変化を受け入れるか。
+        </p>
+
+
+        <p>
+          選択は各国に委ねる。
+        </p>
+
+
+        <p>
+          しかし、ひとつだけ確かなことがある。
+        </p>
+
+
+        <p class="big-text">
+          世界は、これまでと同じではいられない。
+        </p>
+
+
+        <p>
+          ドラ獅子魔王国は、
+          己が掲げる旗のもとに進み続ける。
+        </p>
+
+
+        <p>
+          我々の前に立ちはだかる
+          すべての困難を乗り越え、
+          新たな歴史を、この世界に刻む。
+        </p>
+
+
+        <p class="sunday">
+          そして――<br><br>
+
+          <strong>
+            日曜日。
+          </strong>
+        </p>
+
+
+        <p>
+          その日、世界はドラ獅子魔王国の存在を
+          決して忘れないだろう。
+        </p>
+
+
+        <p>
+          時代が変わる。<br>
+          世界が変わる。<br>
+          そして、新たな歴史が始まる。
+        </p>
+
+
+        <div class="quote">
+
+          「我らは、歴史の傍観者ではない。」<br>
+
+          「我ら自身が、歴史となる。」
+
+        </div>
+
+
+        <p class="fiction">
+          ※このサイトに掲載されている国家・組織・人物・出来事等はすべて架空です。
+        </p>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer>
+
+    <div>
+
+      © 2026
+      <strong>
+        ドラ獅子魔王国
+      </strong>
+
+      <div class="footer-fiction">
+        Fictional World / Fan-made Project
+      </div>
+
+    </div>
+
+
+    <div>
+      OFFICIAL WEBSITE
+    </div>
+
+  </footer>
+
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ======================================== -->
+
+  <script>
+
+
+    /* ==============================
+       スクロールアニメーション
+    ============================== */
+
+    const fadeElements =
+      document.querySelectorAll(".fade");
+
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target
+                .classList
+                .add("show");
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.15
+        }
+      );
+
+
+    fadeElements.forEach(element => {
+
+      observer.observe(element);
+
+    });
+
+
+
+    /* ==============================
+       緊急イベントを開く
+    ============================== */
+
+    function openEmergency() {
+
+      const modal =
+        document.getElementById(
+          "emergencyModal"
+        );
+
+
+      modal.style.display = "flex";
+
+
+      setTimeout(() => {
+
+        modal.classList.add("active");
+
+      }, 10);
+
+
+      document.body.style.overflow =
+        "hidden";
+
+    }
+
+
+
+    /* ==============================
+       緊急イベントを閉じる
+    ============================== */
+
+    function closeEmergency() {
+
+      const modal =
+        document.getElementById(
+          "emergencyModal"
+        );
+
+
+      modal.classList.remove("active");
+
+
+      setTimeout(() => {
+
+        modal.style.display =
+          "none";
+
+      }, 300);
+
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+
+    /* ==============================
+       背景クリックで閉じる
+    ============================== */
+
+    document
+      .getElementById("emergencyModal")
+      .addEventListener(
+        "click",
+        function(e) {
+
+          if (e.target === this) {
+
+            closeEmergency();
+
+          }
+
+        }
+      );
+
+
+
+    /* ==============================
+       ESCキーで閉じる
+    ============================== */
+
+    document.addEventListener(
+      "keydown",
+      function(e) {
+
+        if (e.key === "Escape") {
+
+          closeEmergency();
+
+        }
+
+      }
+    );
+
+
+  </script>
+
+</body>
+</html>
